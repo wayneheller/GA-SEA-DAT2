@@ -15,11 +15,13 @@ import requests
 # Use a URL example in a browser to see the result returned and the use request to access with python
 # http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625
 r = requests.get('http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625')
-
+r.text
+r.json()
 # modify the request to get languges 625 through 650 so we can see a larger sample of what is returned from the request
 # Hint the syntax for more than one language number is similar to one we use for multiple elements in a list
 r = requests.get('http://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=state:06&LAN=625:650')
-
+r.text
+r.json()
 # check the status: 200 means success, 4xx means error
 r.status_code
 
