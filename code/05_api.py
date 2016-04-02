@@ -15,8 +15,10 @@ How to interact with a REST API:
 
 # read IMDb data into a DataFrame: we want a year column!
 import pandas as pd
-movies = pd.read_csv('imdb_1000.csv')
-movies.head()
+movies = pd.read_csv('../data/imdb_1000.csv')
+
+
+print movies.head()
 
 # use requests library to interact with a URL
 import requests
@@ -46,7 +48,7 @@ def get_movie_year(title):
     if info['Response'] == 'True':
         return int(info['Year'])
     else:
-        return None
+        return 'Movie Not Found'
 
 # test the function
 get_movie_year('The Shawshank Redemption')
